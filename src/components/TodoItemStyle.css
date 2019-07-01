@@ -1,0 +1,156 @@
+h1 {
+  font-size: 100px;
+  font-weight: 100;
+  text-align: center;
+  color: rgba(175, 47, 47, 0.15);
+  text-rendering: optimizeLegibility;
+  margin-bottom: 0;
+}
+
+.wrapper {
+  border: 1px solid #eee;
+  text-align: center;
+  width: 500px;
+  border-bottom: 1px solid #eee;
+  margin: auto;
+}
+
+.wrapper .Header {
+  padding: 10px 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-bottom: 1px solid #eee;
+}
+
+.wrapper .Header img {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  margin-right: 15px;
+}
+
+.wrapper .Header input {
+  font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-weight: 300;
+  font-size: 24px;
+  outline: none;
+  border: none;
+  width: 100%;
+}
+
+.wrapper .Wrapper-progress {
+  height: 51px;
+  border-bottom: 1px solid #eee;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.wrapper .Wrapper-progress .number-percent {
+  margin-left: 5px;
+  font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  color: #4d4d4d;
+  width: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.wrapper .Wrapper-progress .block-percent {
+  width: 440px;
+  height: 10px;
+  border: 1px solid #eee;
+  margin: auto;
+  margin-right: 10px;
+  border-radius: 7px;
+}
+
+.wrapper .Wrapper-progress .block-percent .run-percent {
+  -webkit-transition: all 0.5s ease 0s;
+  transition: all 0.5s ease 0s;
+  background: #5ba4cf;
+  height: 10px;
+  border-radius: 7px;
+}
+
+.wrapper .TodoItem {
+  position: relative;
+  border-bottom: 1px solid #eee;
+  padding: 10px 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.wrapper .TodoItem .btn-del {
+  position: absolute;
+  right: 10px;
+  background: url("../images/close.svg");
+  background-repeat: no-repeat;
+  outline: none;
+  width: 16px;
+  height: 16px;
+  border: none;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  display: none;
+  cursor: pointer;
+}
+
+.wrapper .TodoItem:hover .btn-del {
+  display: block;
+}
+
+.wrapper .TodoItem :last-child {
+  border-bottom: none;
+}
+
+.wrapper .TodoItem p {
+  font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-weight: 300;
+  font-size: 24px;
+  color: #4d4d4d;
+  margin: 0 30px 0 15px;
+  word-break: break-all;
+}
+
+.wrapper .TodoItem img {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.wrapper .TodoItem-completed > p {
+  text-decoration: line-through;
+  opacity: .3;
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+}
+
+.wrapper .Footer {
+  width: 500px;
+}
+
+.wrapper .Footer .quantity-list {
+  font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-weight: 300;
+  font-size: 12px;
+  color: #4d4d4d;
+}
+/*# sourceMappingURL=TodoItemStyle.css.map */
