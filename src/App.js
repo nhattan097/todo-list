@@ -1,38 +1,37 @@
-import React from 'react';
-import TodoItem from './components/TodoItem';
-import ProgressBar from './components/ProgressBar';
-import checkAll from './images/list.svg';
+import React from "react";
+import TodoItem from "./components/TodoItem";
+import ProgressBar from "./components/ProgressBar";
+import checkAll from "./images/list.svg";
 
 class App extends React.Component {
   constructor() {
     super();
     this.state = {
       todoItems: [
-        { id: 1, title: 'Get to work', isCompleted: false },
-        { id: 2, title: 'Go home', isCompleted: false },
-        { id: 3, title: 'Self study at home', isCompleted: false }
+        { id: 1, title: "Get to work", isCompleted: false },
+        { id: 2, title: "Go home", isCompleted: false },
+        { id: 3, title: "Self study at home", isCompleted: false },
       ],
-      newItem: ''
+      newItem: "",
     };
     this.isCheck = false;
   }
 
   createID = () => {
     return (
-      Math.random()
-        .toString(36)
-        .substring(2) + new Date().getTime().toString(36)
+      Math.random().toString(36).substring(2) +
+      new Date().getTime().toString(36)
     );
   };
 
-  onItemClicked = id => {
+  onItemClicked = (id) => {
     const { todoItems } = this.state;
-    const result = todoItems.map(item =>
+    const result = todoItems.map((item) =>
       id === item.id ? { ...item, isCompleted: !item.isCompleted } : { ...item }
     );
     this.setState(
       {
-        todoItems: result
+        todoItems: result,
       },
       this.quantityItemCompleted
     );
@@ -45,15 +44,15 @@ class App extends React.Component {
   onCheckAllClicked = () => {
     this.isChecked();
     const { todoItems } = this.state;
-    todoItems.map(item => {
+    todoItems.forEach((item) => {
       item.isCompleted = this.isCheck;
     });
     this.setState({
-      todoItems: todoItems
+      todoItems: todoItems,
     });
   };
 
-  addNewItem = e => {
+  addNewItem = (e) => {
     let text = e.target.value;
     if (!text) {
       return;
@@ -65,32 +64,28 @@ class App extends React.Component {
     this.setState({
       todoItems: [
         { id: this.createID(), title: text, isCompleted: false },
-        ...this.state.todoItems
+        ...this.state.todoItems,
       ],
-      newItem: ''
+      newItem: "",
     });
   };
 
-  onKeyDown = e => {
+  onKeyDown = (e) => {
     if (e.keyCode === 13) {
       this.addNewItem(e);
     }
   };
 
-  onChange = e => {
+  onChange = (e) => {
     this.setState({
-      newItem: e.target.value
+      newItem: e.target.value,
     });
   };
 
-  delItem = id => {
-    const result = this.state.todoItems.filter(item => {
-      if (id !== item.id) {
-        return item;
-      }
-    });
+  delItem = (id) => {
+    const result = this.state.todoItems.filter((item) => id !== item.id);
     this.setState({
-      todoItems: result
+      todoItems: result,
     });
   };
 
